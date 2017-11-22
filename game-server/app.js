@@ -8,7 +8,7 @@ var app = pomelo.createApp();
 
 var Configure = function() {
   app.set('name', 'treasures');
-
+// 配置服务器
   app.configure('production|development', 'gate', function() {
     app.set('connectorConfig', {
       connector: pomelo.connectors.hybridconnector
@@ -23,7 +23,7 @@ var Configure = function() {
       useProtobuf: true
     });
   });
-
+// 配置area服务器
   app.configure('production|development', 'area', function() {
     var areaId = app.get('curServer').areaId;
     if (!areaId || areaId < 0) {
