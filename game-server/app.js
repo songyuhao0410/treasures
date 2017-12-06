@@ -37,8 +37,10 @@ var Configure = function() {
 }
 
 var contextPath = require.resolve('./context.json');
+// bearcat的依赖关系 牛逼啊 牛逼
+// 扫描路径
 bearcat.createApp([contextPath]);
-
+// bearcat 把所有的配置包了起来
 bearcat.start(function() {
   Configure();
   app.set('bearcat', bearcat);
